@@ -17880,12 +17880,9 @@ mean(x)</code></pre>
 					Funkcja <strong>mean()</strong> zwarac wartość średnią; to
 					nic innego jak średnia arytmetyczna z argumentu.</p
 				>
-				<p
-					><span class="math inline"
-						>\(mean(x) = \frac{x[1] + x[2] + ... + x[n-1] +
-						x[n]}{n}\)</span
-					></p
-				>
+				<p>
+					<img src="https://latex.codecogs.com/svg.image?mean(x)&space;=&space;\frac{x[1]&space;&plus;&space;x[2]&space;&plus;&space;...&space;&plus;&space;x[n-1]&space;&plus;&space;x[n]}{n}" title="https://latex.codecogs.com/svg.image?mean(x) = \frac{x[1] + x[2] + ... + x[n-1] + x[n]}{n}" />
+				</p>
 				<p
 					><strong>var(x)</strong><br />
 					Funckja <strong>var()</strong> zwraca
@@ -17895,9 +17892,8 @@ mean(x)</code></pre>
 					oczekiwanej.</p
 				>
 				<p
-					><span class="math inline"
-						>\(var(x) = D^2X = \sum_{i}(x-EX)^2*p_{i}\)</span
-					></p
+					><img src="https://latex.codecogs.com/svg.image?var(x)&space;=&space;D^2X&space;=&space;\sum_{i}(x_{i}-EX)^2p_{i}" title="https://latex.codecogs.com/svg.image?var(x) = D^2X = \sum_{i}(x_{i}-EX)^2p_{i}" />
+					</p
 				>
 				<p
 					><strong>sd(x)</strong><br />
@@ -17908,9 +17904,7 @@ mean(x)</code></pre>
 					wokół wartości oczekiwanej zmiennej losowej.</p
 				>
 				<p
-					><span class="math inline"
-						>\(sd(x) = \sqrt{var(x)} = \sqrt{D^2X} = DX\)</span
-					></p
+					><img src="https://latex.codecogs.com/svg.image?sd(x)&space;=&space;\sqrt{var(x)}&space;=&space;\sqrt{D^2X}&space;=&space;DX" title="https://latex.codecogs.com/svg.image?sd(x) = \sqrt{var(x)} = \sqrt{D^2X} = DX" /></p
 				>
 				<p
 					><strong>median(x)</strong><br />
@@ -17921,11 +17915,7 @@ mean(x)</code></pre>
 					liczby.</p
 				>
 				<p
-					><span class="math inline"
-						>\(median(x) =
-						\sum\limits_{x_i&lt;x_{0.5}}p_{i}\leq0.5\leq\sum\limits_{x_i\leq
-						x_{0.5}}p_{i}\)</span
-					></p
+					><img src="https://latex.codecogs.com/svg.image?median(x)&space;=&space;\sum_{x<x_{0.5}}p_{i}&space;\leq&space;0.5&space;\leq&space;\sum_{x&space;\leq&space;x_{0.5}}p_{i}" title="https://latex.codecogs.com/svg.image?median(x) = \sum_{x<x_{0.5}}p_{i} \leq 0.5 \leq \sum_{x \leq x_{0.5}}p_{i}" /></p
 				>
 				<p
 					><strong>quantile(x)</strong><br />
@@ -17936,12 +17926,7 @@ mean(x)</code></pre>
 					Kwantylem rzędu 0.5 jest <strong>mediana</strong>.</p
 				>
 				<p
-					><span class="math inline"
-						>\(quantile(x) = \sum\limits_{x_{i}&lt;x_{p}}p_{i}\leq p
-						\leq \sum\limits_{x_{i}\leq x_{p}}p_{i}, \: \: p \in
-						\left \{0, \:0.25, \: 0.5, \: 0.75, \: 1 \right
-						\}\)</span
-					></p
+					><img src="https://latex.codecogs.com/svg.image?quantile(x)&space;=&space;\sum_{x<x_{p}}p_{i}&space;\leq&space;p&space;\leq&space;\sum_{x&space;\leq&space;x_{p}}&space;p_{i}&space;\:&space;\:&space;\:&space;p&space;\in&space;\left\{0,&space;\:&space;0.25,&space;\:&space;0.5,&space;\:&space;0.75,&space;\:&space;1&space;\right\}" title="https://latex.codecogs.com/svg.image?quantile(x) = \sum_{x<x_{p}}p_{i} \leq p \leq \sum_{x \leq x_{p}} p_{i} \: \: \: p \in \left\{0, \: 0.25, \: 0.5, \: 0.75, \: 1 \right\}" /></p
 				>
 				<p
 					><strong>quantile(x, probs=seq(0, 1, 0.2))</strong><br />
@@ -17952,13 +17937,7 @@ mean(x)</code></pre>
 					kwantyle zmiennej co 0.2.</p
 				>
 				<p
-					><span class="math inline"
-						>\(quantile(x, \: probs=seq(0, \: 1, \: 0.2)) =
-						\sum\limits_{x_{i}&lt;x_{p}}p_{i}\leq p \leq
-						\sum\limits_{x_{i}\leq x_{p}}p_{i}, \: \: p \in \left
-						\{0, \:0.2, \: 0.4, \: 0.6, \: 0.8, \: 1 \right
-						\}\)</span
-					></p
+					><img src="https://latex.codecogs.com/svg.image?\small&space;quantile(x,&space;probs=(0,&space;1,&space;0.2))&space;=&space;\sum_{x<x_{p}}p_{i}&space;\leq&space;p&space;\leq&space;\sum_{x&space;\leq&space;x_{p}}p_{i},\:&space;p&space;\in&space;\left\{&space;0,&space;\:&space;0.2,&space;\:&space;0.4,&space;\:&space;0.6,&space;\:&space;0.8,&space;\:&space;1\right\}" title="https://latex.codecogs.com/svg.image?\small quantile(x, probs=(0, 1, 0.2)) = \sum_{x<x_{p}}p_{i} \leq p \leq \sum_{x \leq x_{p}}p_{i},\: p \in \left\{ 0, \: 0.2, \: 0.4, \: 0.6, \: 0.8, \: 1\right\}" /></p
 				>
 			</div>
 			<div id="macierze---praca-własna" class="section level3">
