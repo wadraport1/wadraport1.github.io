@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="Wprowadzenie do jezyka R - raport">
+		<meta name="keywords" content="R, RStudio">
+    <meta name="author" content="Krzysztof Stawarz">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="style.css" />
+		<title>Raport</title>
+	</head>
+	<body>
+		<div class="text" id="title">1. Wprowadzenie do języka R - raport</div>
+		<div class="text" id="subtitle"
+			>Krzysztof Stawarz<br />Wielowymiarowa analiza danych
+		</div>
+
+		<div class="subsubtitle"> ZAD. 1 </div>
+
+		<div class="text">
+			Stwórz zmienną (dowolna nazwa) i przypisz jej następującą wartość(ze
+			znakiem cudzysłowu):<br /><strong>"78.8981"</strong><br />
+			Następnie dodaj do tej zmiennej wartość 78.3 (wykorzystując operator
+			dodawania +). Zwróć uwagę, jaki komunikat zostanie wyświetlony w
+			konsoli!</div
+		>
+
+		<div
+			data-pym-src="https://www.jdoodle.com/embed/v0/5yGC/?stdin=0&args=0&rw=1"
+			class="compiler"
+		></div>
+
+		<div class="text">
+			<strong
+				>Odp: Error in dowolna_nazwa + 78.3 : non-numeric argument to
+				binary operator.</strong
+			>
+			<br /><br />
+			W języku R, podobnie jak w inncyh NORMALNYCH
+			<span>&#128521;</span> językach programowania nie można wykonać
+			operacji dodawania na dwóch różnych obiektach różnych klas (w naszym
+			wypadku character + numeric). Aby jakkolwiek przeprowadzić te
+			operację, należałoby zrzutować jedną z wartości na klasę drugiej.
+			Przykładowo:<br />
+		</div>
+
+		<div
+			data-pym-src="https://www.jdoodle.com/embed/v0/5yGF/?stdin=0&args=0&rw=1"
+			class="compiler"
+		></div>
+
+		<div class="text">
+			Ewentualnie, jeśli potrzebujemy, wynik takiego działania możemy
+			zrzutować na stringa funkcją <strong>as.character():</strong></div
+		>
+
+		<div
+			data-pym-src="https://www.jdoodle.com/embed/v0/5yGO/?stdin=0&args=0&rw=1"
+			class="compiler"
+		></div>
+
+		<div class="text">
+			Aby połączyć dwa stringi, nie można użyć operatora binarnego
+			<strong>+</strong>
+			(Error in dowolna_nazwa + as.character(78.3) : non-numeric argument
+			to binary operator). Do takiej operacji najlepiej użyć funkcji
+			<strong>paste():</strong>
+		</div>
+
+		<div
+			data-pym-src="https://www.jdoodle.com/embed/v0/5yGQ/?stdin=0&args=0&rw=1"
+			class="compiler"
+		></div>
+
+		<div class="subsubtitle">ZAD. 2</div>
+		<div class="text"> Uruchom następujące polecenia i wskaż różnice:</div>
+
+		<div
+			data-pym-src="https://www.jdoodle.com/embed/v0/5yGS/?stdin=0&args=0&rw=1"
+			class="compiler"
+		></div>
+
+		<div class="text">
+			<strong>Odp:</strong> Pierwszy operator <strong>%%</strong> oznacza
+			wynik reszty z dzielenia (po programistycznemu - mod; modulo). Drugi
+			operator <strong>%/%</strong> oznacza dzielenie całkowite, czyli
+			wyciąganie z dzielenia całości, ignorowanie częsci dziesiętnej
+			wyniku.
+		</div>
+
+		<div class="subsubtitle">ZAD. 3</div>
+		<div class="text">
+			Sprawdź działanie poniższych komend. Skomentuj ich działanie.</div
+		>
+
+		<div
+			data-pym-src="https://www.jdoodle.com/embed/v0/5yGZ/?stdin=0&args=0&rw=1"
+			class="compiler"
+		></div>
+
+		<div class="text">
+			<strong>Odp:</strong> <br /><span class="code"
+				>x = c(Inf, 213, NaN, 4, NaN, 20, -Inf, NA)</span
+			><br />
+			Tworzę zmienną <strong>x</strong>, w której będę przechowywał
+			<strong>wektor</strong> z podanymi wyzej wartościami.<br /><br /><span
+				class="code"
+				>x[3] = 7</span
+			><br />
+			W wektorze <strong>x</strong> liczba stojąca na indeksie
+			<strong>3</strong> podmienia (nadpisuje) wartość na 7.
+			<br /><br /><span class="code">is.na(x)</span><br />
+			Funkcja <strong>is.na()</strong> przechodzi po
+			<strong>wszystkich</strong> wartościach argumentu i zwraca wektor
+			klasy logical wielkości <strong>x</strong> z bool'ami:<br />TRUE
+			<span>&#8660;</span> wartość = NaN <span>&#x22BB;</span> wartość =
+			NA <br />
+			FALSE <span>&#8660;</span> wartość <span>&#x2260;</span> NaN
+			<span>&#x2227;</span> wartość
+			<span>&#x2260;</span> NA<br /><br /><span class="code"
+				>x <- 1:5 </span
+			><br />Tworzymy wektor o wartościach od 1 do 5
+			<strong>włącznie</strong>, a nastepnie przypisujemy go do zmiennej
+			<stron>x</stron>, jednocześnie nadpisując poprzedni wektor pod tą
+			zmienną.<br /><br /><span class="code">y <- (x%%2==0)</span><br />
+			Przypisuje pod zmienną <stron>Y</stron> wektor logical o wielkości x
+			z bool'ami:<br />
+			y[n] = TRUE <span>&#8660;</span> x[n]%%2 = 0<br />
+			y[n] = FALSE <span>&#8660;</span> x[n]%%2 <span>&#x2260;</span> 0
+			<br />
+			y[n] = NA <span>&#8660;</span> x[n] <span>&#8712;</span> {Inf, -Inf,
+			NaN, NA}<br />
+			oczywiście dla n w przedziale <strong><1, length(x)> </strong
+			><br /><br />
+			<span class="code">y <- x[2:4]</span><br />Nadpisuję zmienną
+			<strong>y</strong> jako podwektor wycięty z
+			<strong>x</strong>,wartości z indeksów z przedziału
+			<strong>2:4</strong> (2, 3, 4).<br /><br /><span class="code"
+				>y <- y[c(1,3)]</span
+			><br />Skraca wektor <strong>y</strong> do wektora dwuelementowego,
+			zawierającego wartości z siebie samego o indeksach
+			<strong>1</strong> i <strong>3</strong>.<br /><br /><span
+				class="code"
+				>z <- x[-(2:4)]</span
+			><br />Przypisanie do zmiennej <strong>z</strong> podwektor wycięty
+			z <strong>x</strong>, skrócony o wartości o indeksach z przedziału
+			<strong>2:4</strong> (2, 3, 4).
+		</div>
+		<div class="subsubtitle">ZAD. 4</div>
+		<div class="text"
+			>Wyjaśnij znaczenie (ewent. podaj prosty przykład) poniższych
+			terminów statystycznych):</div
+		>
+
+		<div
+			data-pym-src="https://www.jdoodle.com/embed/v0/5yHk/?stdin=0&args=0&rw=1"
+			class="compiler"
+		></div>
+
+		<div class="text">
+			<strong>Odp: </strong><br />
+			<span class="code">x = 1:15</span><br />
+			Tworzę <strong>wektor</strong> z wartościami od 1 do 15
+			<strong>włącznie</strong> i zapisuję go pod zmienną
+			<strong>x</strong>.<br /><br />
+
+			<span class="code">mean(x)</span><br />
+			Funkcja <strong>mean()</strong> zwarac wartość średnią; to nic
+			innego jak średnia arytmetyczna z argumentu.<br />
+			<div class="eq">
+				<img src="https://latex.codecogs.com/svg.image?\large&space;mean(x)&space;=&space;\frac{x[1]&space;&plus;&space;x[2]&space;&plus;&space;...&space;&plus;&space;x[n-1]&space;&plus;&space;x[n]}{n}" title="https://latex.codecogs.com/svg.image?\large mean(x) = \frac{x[1] + x[2] + ... + x[n-1] + x[n]}{n}" />
+			</div>
+			<br />
+			
+
+			<span class="code">var(x)</span><br />
+			Funckja <strong>var()</strong> zwraca <strong>wariancję </strong> z
+			argumentu. Wariancja to moment centralny rzędu drugiego zmiennej
+			losowej. Jest ona miarą rozrzutu wartości zmiennej wokół jej
+			wartości oczekiwanej.<br />
+			<div class="eq">
+				<img src="https://latex.codecogs.com/svg.image?\large&space;var(x)&space;=&space;D^2X&space;=&space;\sum_{i}^{}(x_{i}&space;-&space;EX)^2p_{i}" title="https://latex.codecogs.com/svg.image?\large var(x) = D^2X = \sum_{i}^{}(x_{i} - EX)^2p_{i}" />
+			</div>
+			<br />
+
+			<span class="code">sd(x)</span><br />
+			Funkcja <strong>sd()</strong> zwraca odchylenie standardowe
+			argumentu. Odchylenie standardowe to pierwiastek kwadratowy z
+			wariancji. Mówi o tym, jak szeroko wartości rozproszonę są wokół
+			wartości oczekiwanej zmiennej losowej.<br />
+			<div class="eq">
+				<img src="https://latex.codecogs.com/svg.image?\large&space;sd(x)&space;=&space;\sqrt{var(x)}&space;=&space;\sqrt{D^2X}&space;=&space;DX" title="https://latex.codecogs.com/svg.image?\large sd(x) = \sqrt{var(x)} = \sqrt{D^2X} = DX" />
+			</div>
+			<br />
+
+			<span class="code">median(x)</span><br />
+			Funkcja <strong>median()</strong> zwraca medianę z argumentu.
+			Mediana to wartość środkowa/przeciętna. To taka liczba, że połowa
+			wszystkich przyjmowanych przez zmienną losową wartości leży poniżej
+			tej liczby.<br />
+			<div class="eq">
+				<img src="https://latex.codecogs.com/svg.image?\large&space;median(x)&space;=&space;\sum_{x_{i}<x_{0.5}}^{}p_{i}&space;\leq&space;0.5&space;\leq&space;\sum_{x_{i}&space;\leq&space;x_{0.5}}^{}p_{i}" title="https://latex.codecogs.com/svg.image?\large median(x) = \sum_{x_{i}<x_{0.5}}^{}p_{i} \leq 0.5 \leq \sum_{x_{i} \leq x_{0.5}}^{}p_{i}" />
+			</div>
+			<br />
+
+			<span class="code">quantile(x)</span><br />
+			Funkcja <strong>quantile()</strong> zwraca kwantyle z argumentu.
+			Kwantyle rzędu p, to takie liczby, że właśnie p% wszystkich przyjmowanych
+			przez zmienną losową wartości leży poniżej tych liczb; domyślnie co
+			25%. Kwantylem rzędu 0.5 jest <strong>mediana</strong>.<br />
+			<div class="eq">
+				<img src="https://latex.codecogs.com/svg.image?\large&space;quantile(x)&space;=&space;\sum_{x_{i}<x_{p}}^{}p_{i}&space;\leq&space;p&space;\leq&space;\sum_{x_{i}&space;\leq&space;x_{p}}^{}p_{i},\,\,&space;p&space;\in&space;\{0,\,0.25\,,0.5,\,0.75,\,1\}" title="https://latex.codecogs.com/svg.image?\large quantile(x) = \sum_{x_{i}<x_{p}}^{}p_{i} \leq p \leq \sum_{x_{i} \leq x_{p}}^{}p_{i},\,\, p \in \{0,\,0.25\,,0.5,\,0.75,\,1\}" />
+			</div><br />
+
+			<span class="code">quantile(x, probs=seq(0, 1, 0.2))</span><br /
+			>Funkcja <strong>quantile()</strong> moze przyjąć drugi argument:
+			<strong>probs=</strong>. Argument ten przyjmuje wektor numeryczny i
+			słuzy zmianie domyślnych "przeskoków" (co 0.25) kwantyli. Powyzsza
+			funkcja pokaze nam zatem kwantyle zmiennej co 20%.<br />
+			<div class="eq">
+				<img src="https://latex.codecogs.com/svg.image?\small&space;quantile(x,&space;probs=seq(0,\,&space;1,\,&space;0.2))&space;=&space;\sum_{x_{i}<x_{p}}^{}p_{i}&space;\leq&space;p&space;\leq&space;\sum_{x_{i}&space;\leq&space;x_{p}}^{}p_{i},\,\,&space;p&space;\in&space;\{0,\,0.2\,,0.4,\,0.6,\,0.8,\,1\}" title="https://latex.codecogs.com/svg.image?\small quantile(x, probs=seq(0,\, 1,\, 0.2)) = \sum_{x_{i}<x_{p}}^{}p_{i} \leq p \leq \sum_{x_{i} \leq x_{p}}^{}p_{i},\,\, p \in \{0,\,0.2\,,0.4,\,0.6,\,0.8,\,1\}" />
+			</div>
+		</div>
+
+
+		<div class="subsubtitle"><br> MACIERZE - praca własna</div>
+		<div class="text"> Proszę odpalić ponizszy kod. W terminalu wszystkie uzyte przeze mnie funkcje oraz to, co zwracają wraz z opisem.</div>
+		<div
+		data-pym-src="https://www.jdoodle.com/embed/v0/5E7J/?stdin=0&args=0&rw=1"
+		class="compiler"
+	></div>
+		<div class = "text"> autor: Krzysztof Stawarz</div>
+		<script
+			src="https://www.jdoodle.com/assets/jdoodle-pym.min.js"
+			type="text/javascript"
+		></script>
+
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	</body>
+</html>
