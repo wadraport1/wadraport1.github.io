@@ -3,10 +3,6 @@
 	place-items: center;
 }
 
-#editor {
-	width: 95rem;
-}
-
 @media (max-width: 950px) {
 	#editor {
 		width: 100vw;
